@@ -1,0 +1,90 @@
+.my-nav {
+  overflow: hidden !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+  padding: 6px 0 !important;
+  justify-content: space-around !important;
+}
+
+@media(max-width: 950px) {
+  .my-nav {
+    overflow: hidden !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+    padding: 6px 0 !important;
+    justify-content: space-around !important;
+    display: inherit !important;
+    flex-wrap: inherit !important;
+  }
+}
+
+.my-nav-item {
+  display: inline-block !important;
+}
+
+@media(max-width: 470px) {
+  .credito-dados-cliente {
+    font-size: 25px !important;
+  }
+}
+
+@media(max-width: 420px) {
+  .size-card-icon {
+    font-size: 25px;
+  }
+  .size-circle-icon {
+    font-size: 14px;
+    background: transparent;
+    margin-bottom: -3px;
+  }
+}
+
+@media(max-width: 415px) {
+  .credito-dados-cliente {
+    font-size: 20px !important;
+  }
+}
+
+@media(max-width: 365px) {
+  .credito-dados-cliente {
+    font-size: 15px !important;
+  }
+}
+
+@media(max-width: 910px) {
+  .container-button-mapa {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+.my-table-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.my-table-footer ul {
+  margin-right: 20px;
+}
+
+@media(max-width: 425px) {
+  .my-table-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .my-table-footer ul {
+    justify-content: center;
+    margin-bottom: 5px;
+    margin-right: 0px
+  }
+
+  .my-table-footer a {
+    display: flex;
+    justify-content: center;
+  }
+}

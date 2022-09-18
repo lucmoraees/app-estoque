@@ -1,0 +1,41 @@
+.title-center-doghnut-chart {
+  position: absolute;
+  width: min-content;
+  line-height: 1em;
+  text-align: center;
+  font-size: clamp(1em, 0.7em + 1vw, 1.3em) !important;
+}
+
+.tooltip-balao {
+  background:#fff;
+  float:left;
+  box-shadow: 2px 2px 3px rgb(128 128 128);
+}
+
+.tooltip-balao:before{
+  content:'';
+  position: absolute;
+  width:10px;
+  height:10px;
+  left:43%;
+  top:90%;
+  background:#fff;
+  -webkit-transform:rotate(45deg);
+}
+
+.tooltip-balao-title {
+  font-family: "Segoe UI", "Helvetica Neue", "Open Sans", san-serif;
+  font-weight: 400;
+  color: #808080;
+  font-size: clamp(0.8em, 0.7em + 1vw, 1em);
+  line-height: 1em;
+}
+
+.tooltip-balao-body {
+  font-family: "Segoe UI", "Helvetica Neue", "Open Sans", san-serif;
+  font-weight: 400;
+  color: #1c2b46;
+  min-width: 110px;
+  font-size: clamp(1.1em, 0.7em + 1vw, 1.3em);
+  line-height: 1.3em;
+}

@@ -1,0 +1,17 @@
+.selected-row {
+  background-color: #e7f4ff !important;
+  border: 'none' !important;
+}
+
+.pagination-button:focus {
+  background-color: #e7f4ff !important;
+}
+
+.pagination-selected:focus {
+  background-color: #e7f4ff !important;
+  color: black !important;
+}
+
+.row-focus:hover {
+  background-color: #fffeee;
+}

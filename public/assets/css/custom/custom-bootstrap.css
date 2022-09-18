@@ -1,0 +1,135 @@
+/* Buttons  */
+.btn-blue {
+  color: #fff;
+  background-color: #559bfb;
+  border-color: #559bfb;
+}
+
+.btn-blue:hover {
+  color: #fff;
+  background-color: #3889fa;
+  border-color: #3889fa;
+}
+
+.btn-blue:focus, .btn-blue.focus {
+  color: #fff; 
+  background-color: #3889fa; 
+  border-color: #3889fa; 
+  box-shadow: 0 0 0 0.2rem rgba(91, 148, 227, 0.5);
+}
+
+.btn-green {
+  color: #fff;
+  background-color: #50BB9C;
+  border-color: #50BB9C;
+}
+
+.btn-green:hover {
+  color: #fff;
+  background-color: #40a589;
+  border-color: #40a589;
+}
+
+.btn-green:focus, .btn-green.focus {
+  color: #fff; 
+  background-color: #40a589; 
+  border-color: #40a589; 
+  box-shadow: 0 0 0 0.2rem rgba(91, 148, 227, 0.5);
+}
+
+.btn-red {
+  color: #fff;
+  background-color: #dd4b4b;
+  border-color: #dd4b4b;
+}
+
+.btn-red:hover {
+  color: #fff;
+  background-color: #d62929;
+  border-color: #d62929;
+}
+
+.btn-red:focus, .btn-green.focus {
+  color: #fff; 
+  background-color: #d62929; 
+  border-color: #d62929; 
+  box-shadow: 0 0 0 0.2rem rgba(91, 148, 227, 0.5);
+}
+
+.swal2-confirm:focus {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Form  */
+.form-control:focus {
+  border-color: #559bfb !important;
+  box-shadow: 0 0 0 3px rgba(85, 155, 251, 0.1) !important;
+}
+
+/* Badges */
+.badge-blue {
+  color: #fff;
+  background-color: #559bfb;
+  border-color: #559bfb;
+}
+
+.badge-green {
+  color: #fff;
+  background-color: #50BB9C;
+  border-color: #50BB9C;
+}
+
+.badge-red {
+  color: #fff;
+  background-color: #dd4b4b;
+  border-color: #dd4b4b;
+}
+
+/* Text */
+.text-red {
+  color: #dd4b4b
+}
+
+.text-green {
+  color: #50BB9C;
+}
+
+.text-blue {
+  color: #3889fa;
+}
+
+.text-yellow {
+  color: #cd9f0c;
+}
+
+.nav-tabs .nav-link.active {
+  color: #3889fa !important;
+}
+
+.nav-tabs .nav-link:after {
+  background-color: #3889fa !important;
+}
+
+/* Background */
+.background-light {
+  background-color: #e5e9f2;
+}
+
+.background-yellow-light {
+  background-color: #fef7e2;
+}
+
+.tintometrico-maquina:hover {
+  border-color: #559bfb !important;
+}
+
+.tintometrico-maquina.active {
+  border: #e7f4ff !important;
+  background-color: #e7f4ff !important;
+}
+
+.tintometico-search {
+  height: 100%;
+  width: fit-content;
+}

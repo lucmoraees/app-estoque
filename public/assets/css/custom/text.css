@@ -1,0 +1,94 @@
+.fs-1rem-and-half {
+  font-size: 1.5rem;
+}
+
+.fs-2rem {
+  font-size: 2rem;
+}
+
+.fs-4rem {
+  font-size: 4rem;
+}
+
+.fs-6rem {
+  font-size: 6rem;
+}
+
+.fs-8rem {
+  font-size: 8rem;
+}
+
+.fs-23px {
+  font-size: 23px;
+}
+
+.fs-25px {
+  font-size: 25px;
+}
+
+.fs-30px {
+  font-size: 30px;
+}
+
+.text-black {
+  color: #383838 !important;
+}
+
+.text-title {
+  color: #292929 !important;
+}
+
+.text-body {
+  color: #a6a6a6 !important
+}
+
+.text-blue {
+  color: #559bfb;
+}
+
+.fw-light {
+  font-weight: 330 !important;
+}
+
+.fw-regular {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-dark-blue {
+  color: #2c3782 !important;
+}
+
+.text-green {
+  color: #20c997 !important;
+}
+
+.text-red {
+  color: #e85347 !important;
+}
+
+.text-light-blue {
+  color: #8cbcfd !important;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+.line-through {
+  text-decoration: line-through;
+}

@@ -1,0 +1,98 @@
+@media(max-width: 990px) {
+  .aside-login {
+    display: none !important;
+  }
+}
+
+@media(max-width: 990px) {
+  .header-text {
+    color: 'dark';
+  }
+  
+  .w-mobile-50 {
+    width: 50% !important;
+  }
+  
+  .w-mobile-100 {
+    width: 100% !important;
+  }
+
+  .width-chart-recebimentos-dia {
+    width: 990px !important;
+  }
+
+  .w-100-mobile {
+    width: 100% !important; 
+  }
+
+  .h-100-mobile {
+    height: 100% !important; 
+  }
+
+  .header-options {
+    margin-right: 0px;
+  }
+
+  .logo-mobile {
+    max-width: 200px;
+  }
+
+  .container-mobile {
+    padding: 0px !important;
+    margin: 0px !important
+  }
+  
+  .display-cards {
+    flex-direction: column;
+  }
+
+  .card-caixa-body {
+    max-width: 100% !important;
+  }
+
+  .card-totalizador {
+    width: 100% !important;
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .mobile-h-150 {
+    height: 150px;
+  }
+
+  .w-filter {
+    min-width: none !important;
+    flex: 1;
+  }
+
+  .backgroun-light-gray-mobile {
+    background-color: #eaeaea !important;
+  }
+
+  .text-gray-mobile {
+    color: #526484 !important
+  }
+
+  .detalhes-produto-body {
+    flex-direction: column !important;
+  }
+
+  .tintometico-search {
+    height: fit-content !important;
+    width: 100% !important;
+  }
+
+  .terminal-w-input {
+    width: 100% !important;
+  }
+}
+
+@media(max-width: 1500px) {
+  .detalhes-produto-card {
+    width: 100% !important;
+  }
+
+  .conteiner-carrinho {
+    flex-direction: column !important;
+  }
+}

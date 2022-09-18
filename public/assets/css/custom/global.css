@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: Montserrat, "Helvetica Neue","Segoe UI",helvetica,verdana,"Open Sans", san-serif;
+  background-color: #fff;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+button {
+  outline: none !important;
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  cursor: pointer !important;
+}
+
+.fa-solid {
+  font-family: 'Font Awesome 6 Pro' !important;
+}
+
+.fa-regular {
+  font-family: 'Font Awesome 6 Pro' !important;
+}
+
+.fa-light {
+  font-family: 'Font Awesome 6 Pro' !important;
+}
+
+.select-loja {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+.select-loja:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 
+
+.hight-auto {
+  height: auto;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.header-selected {
+  background-color: #559bfb;
+  color: '#fff' !important;
+}
+
+.is-theme .nk-menu-main > li > .nk-menu-link {
+  color: '#ffffff' !important;
+}
+
+@media(min-width: 992px) {
+  .nk-menu-main > li.nk-menu-item > .nk-menu-link {
+    padding: 1.28rem 0;
+    font-size: 16px;
+  }
+}
+
+.nk-menu-main > li > .nk-menu-link:before {
+  background: #1c2b46;
+  display: none;
+}
+
+.dropdown-menu-s1 {
+  border-top: 3px solid #1c2b46
+}
+
+.nk-block {
+  padding-top: 0px !important;
+}
+
+.card-inner {
+  padding: 1rem !important;
+}
+
+.d-flex-block {
+  display: block;
+}
+
+.d-flex-none {
+  display: none;
+}
+
+.divider-line {
+	padding: 0.005rem;
+  background-color: #a6a6a6;
+  opacity: 0.3;
+}
+
+.margin-box {
+  border: 1px solid #eef2ff;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.p-datepiker-month {
+  padding-left: 20% !important;
+}
+
+.nk-sidebar-active {
+  display: block !important;
+}
+
+.border-gray {
+  border: #a6a6a6 solid 1px !important;
+}
+
+.header-options {
+  margin-right: 60px;
+}
+
+.card-caixa {
+  background-color: rgb(190, 207, 235);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.card-caixa:hover {
+  background-color: rgb(190, 207, 235, 0.5) !important;
+}
+
+.card-caixa-body {
+  max-width: calc(50% - 5px);
+  cursor: pointer;
+}
+
+.border-gray {
+  border-color: #dbdfea !important;
+}
+
+.card-totalizador {
+  flex: 0 0 calc(25% - 5px);
+  max-width: 25%;
+}
+
+.p-pagination {
+  padding: 1rem 0px !important;
+}
+
+.w-filter {
+  min-width: 250px;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.h-36px {
+  height: 36px;
+}
+
+.page-item:hover {
+  color: #465fff !important;
+  background-color: #ebeef2 !important;
+  border-color: #ebeef2 !important;
+}
+
+.page-item:focus {
+  background-color: red;
+}
+
+.page-item-active {
+  color: #ebeef2 !important;
+  background-color: #465fff !important;
+  border-color: #465fff !important;
+}
+
+.disabled-opacity {
+  opacity: 0.5;
+}
+
+.card-shadow {
+  box-shadow: 0 1.5px 4px rgb(0 0 0 / 24%), 0 1.5px 6px rgb(0 0 0 / 12%);
+}
+
+.pagination-selected {
+  background-color: #559bfb !important;
+  color: white !important;
+}
+
+.terminal-height-card {
+  min-height: calc(100vh - 115px);
+}
+
+.terminal-content-padding-inline {
+  padding-inline: 30px !important;
+}
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+.modal-background {
+  background-color: rgba(85, 85, 85, 0.6) !important;
+  width: 100vw;
+  height: 100vh;
+}
+
+.detalhes-produto-foto-pequena {
+  height: 65px;
+  width: 65px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #fff;
+}
+
+.detalhes-produto-foto-pequena-active {
+  border: 1px solid #559bfb !important;
+}
+
+.detalhes-produto-foto-pequena:hover {
+  border-color: #559bfb;
+}
+
+.badge-descricao {
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.badge-descricao::after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #212938;
+  bottom: -8px;
+  content: "";
+  height: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  width: 0;
+}
+
+.detalhes-produto-card {
+  width: 60%;
+}
+
+.icon-credit-cricle {
+  position: absolute;
+  left: 24px;
+  bottom: 7px;
+  font-size: 18px;
+  background-color: #fff;
+}
+
+.map-marker {
+  margin-left: -100px;
+  padding: 2px 4px;
+  background-color: #fff;
+  font-size: 12px !important;
+  border-radius: 4px;
+}

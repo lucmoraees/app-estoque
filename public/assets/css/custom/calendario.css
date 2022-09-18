@@ -1,0 +1,76 @@
+.calendario-day-box {
+  width: 100%;
+}
+
+.calendario {
+  width: 100%;
+}
+
+.calendario-header-days {
+  width: 14%;
+  text-align: center;
+  font-size: 100%;
+}
+
+.calendario-day-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px;
+  background-color: #dbdfea;
+  position: relative;
+  border-radius: 5px;
+  width: 14%;
+  margin: 5px;
+}
+
+.calendario-day-box-selected {
+  background-color: rgba(0, 131, 143, 0.3) !important;
+}
+
+.calendario-coluna {
+  background: rgb(2,0,36);
+  background-image: linear-gradient(180deg, #5e92f3, #004da7, #003c8f);
+  width: 100%;
+  max-width: 12px;
+}
+
+.calendario-dia {
+  font-size: 100%;
+  font-weight: 400;
+  color: #1c2b46;
+  text-align: end;
+}
+
+@media(max-width: 990px) {
+  .p-calendario-mobile {
+    padding: 5px !important;
+  }
+
+  .calendario-day-box {
+    padding: 7px !important;
+    margin: 3px;
+  }
+
+  .calendario-coluna {
+    width: 25%;
+  }
+
+  .calendario-dia {
+    font-size: 80%;
+  }
+}
+
+@media(max-width: 550px) {
+  .calendario-coluna {
+    width: 25%;
+  }
+
+  .calendario-day-box {
+    padding: 5px !important;
+  }
+
+  #calendario .card-inner {
+    padding: 8px !important;
+  }
+}

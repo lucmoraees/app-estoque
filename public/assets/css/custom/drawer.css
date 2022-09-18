@@ -1,0 +1,257 @@
+.drawer {
+  margin-top: 76px;
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  left: 0;
+  background-color: #19212f;
+  overflow-x: scroll;
+  color: white;
+  transform: translateX(-100%);
+  transition: 0.5s ease;
+  z-index: 100;
+}
+
+.background-drawer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 99;
+  transform: translateX(-100%);
+  top: 76px;
+}
+
+@media(min-width: 991px) {
+  .show-drawer-trigger {
+    display: none !important;
+  }
+
+  .background-drawer {
+    display: none !important;
+  }
+
+  .drawer {
+    display: none !important;
+  }
+}
+
+@media(max-width: 991px) {
+  .hide-header-tools {
+    display: none !important;
+  }
+}
+
+.opened-drawer {
+  /* opacity: 1; */
+  transform: translateX(-0);
+}
+
+.drawer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-container li {
+  height: auto;
+  justify-content: center;
+}
+
+/* .drawer-container div {
+
+} */
+
+.drawer-tools {
+  width: 100%;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.drawer-container div.active {
+  background-color: #559bfb !important;
+}
+
+.drawer-tools.active {
+  background-color: #559bfb !important;
+}
+
+.drawer-tools:hover {
+  background-color: #10151d;
+}
+
+.user-drawer {
+  padding-inline: 25px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.user-drawer:hover {
+  background-color: #10151d;
+}
+
+.drawer-container a {
+  align-items: flex-end;
+  padding: 0 !important;
+}
+
+.description {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+  align-items: center !important;
+  padding-left: 22px;
+}
+
+.font-size-cancelar {
+  font-size: 18px !important;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.logo {
+  position: fixed;
+  bottom: 70px;
+  margin-left: 18px;
+}
+
+.divider-drawer {
+  border: 1px solid grey;
+  height: 0 !important;
+  width: 214px !important;
+  padding: 0px !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 18px;
+}
+
+.container-icon {
+  width: 40.59px !important;
+  justify-content: center;
+}
+
+.icon-drawer-floppy-disk {
+  font-size: 28px !important;
+  margin-top: 0px !important;
+}
+
+/*
+* Logo and user
+*/
+
+@media(max-width: 991px) {
+  .hide-header-tools {
+    display: none !important;
+  }
+
+  .hide-header-user {
+    display: none !important;
+  }
+
+  .hide-header-logo {
+    display: none !important;
+  }
+}
+
+/*
+* Orcamentos
+*/
+
+.show-drawer-orcamentos {
+  display: none;
+}
+
+@media(max-width: 750px) {
+  .hide-header-orcamentos {
+    display: none !important;
+  }
+  .show-drawer-orcamentos {
+    display: flex;
+  }
+}
+
+/*
+* Temporarios
+*/
+
+.show-drawer-temporarios {
+  display: none;
+}
+
+@media(max-width: 690px) {
+  .hide-header-temporarios {
+    display: none !important;
+  }
+  .show-drawer-temporarios {
+    display: flex;
+  }
+}
+
+/*
+* Cancelar pedido
+*/
+
+.show-drawer-cancelar {
+  display: none;
+}
+
+@media(max-width: 630px) {
+  .hide-header-cancelar {
+    display: none !important;
+  }
+  .show-drawer-cancelar {
+    display: flex;
+  }
+}
+
+/*
+* Novo pedido
+*/
+
+.show-drawer-novo {
+  display: none;
+}
+
+@media(max-width: 530px) {
+  .hide-header-novo {
+    display: none !important;
+  }
+  .show-drawer-novo {
+    display: flex;
+  }
+}
+
+/*
+* Salvar pedido
+*/
+
+.show-drawer-salvar {
+  display: none;
+}
+
+@media(max-width: 480px) {
+  .hide-header-salvar {
+    display: none !important;
+  }
+  .show-drawer-salvar {
+    display: flex;
+  }
+}
+
+/*
+* Diminuindo padding
+*/
+
+@media(max-width: 430px) {
+  .nk-menu-trigger {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .nk-quick-nav > li { padding: 0 0px; }
+}
