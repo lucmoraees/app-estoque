@@ -35,7 +35,7 @@ const Produtos = (): ReactElement => {
   const [filters, setFilters] = useState<IFilters>({
     column: 'descricao',
     value: undefined,
-    columnToOrder: 'codigo',
+    columnToOrder: 'descricao',
     operacao: 'contendo',
     order: 'ASC',
     pagina: 1,
