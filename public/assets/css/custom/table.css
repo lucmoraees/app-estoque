@@ -1,34 +1,24 @@
-.terminal-th {
+.custom-th {
   color: #b7b7b7 !important;
   font-size: 13px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.terminal-height-table {
+.custom-height-table {
   height: 100% !important;
 }
 
-.terminal-tr {
+.custom-tr {
   height: 50px;
   font-size: 13px !important;
   font-weight: 500 !important;
 }
 
-.terminal-tr-par {
+.custom-tr-par {
   background-color: #f9f9f9;
 }
 
-.terminal-tr-impar {
+.custom-tr-impar {
   background-color: #fff;
-}
-
-.terminal-valor-produto {
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  line-height: 0.8 !important;
-}
-
-.terminal-button-excluir {
-  color: #b7b7b7 !important;
 }

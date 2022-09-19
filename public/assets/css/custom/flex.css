@@ -49,3 +49,15 @@
 .w-50px {
   width: 50px;
 }
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.d-flex-block {
+  display: block;
+}
+
+.d-flex-none {
+  display: none;
+}

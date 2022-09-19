@@ -119,17 +119,3 @@
 .background-yellow-light {
   background-color: #fef7e2;
 }
-
-.tintometrico-maquina:hover {
-  border-color: #559bfb !important;
-}
-
-.tintometrico-maquina.active {
-  border: #e7f4ff !important;
-  background-color: #e7f4ff !important;
-}
-
-.tintometico-search {
-  height: 100%;
-  width: fit-content;
-}
