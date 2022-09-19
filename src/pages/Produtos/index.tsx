@@ -94,6 +94,8 @@ const Produtos = (): ReactElement => {
       await buscarProdutos();
 
       exibirToastSuccess('Produto deletado!');
+
+      setShowModalDeletarProduto(false);
     } catch (error) {
       exibirToastErrorCatch(error, 'Algo deu errado ao tentar deletar o produto!');
     }
@@ -113,8 +115,8 @@ const Produtos = (): ReactElement => {
       <ModalConfirmacao
         closeModal={() => setShowModalDeletarProduto(false)}
         onSubmit={deletarProduto}
-        text={`Ao confirmar você excluirá o produto ${produtoSelecionado?.descricao} de forma permanente`}
-        title={`Deseja excluir o produto #${produtoSelecionado?.codigo}?`}
+        text="Ao confirmar você excluirá o produto de forma permanente"
+        title={`Deseja excluir o produto ${produtoSelecionado?.descricao}?`}
         visible={showModalDeletarProduto}
       />
       <ModalFormularioProduto

@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
 import {
+  ChangeEvent,
   FormEvent, useCallback, useEffect, useState,
 } from 'react';
 import { IProduto } from '../../../@types';
 import api from '../../../api';
 import { Button, Modal, SelectTipoEmbalagem } from '../../../components';
-import { exibirToastErrorCatch, exibirToastSuccess } from '../../../utils';
+import InputMaskMoney from '../../../components/InputMaskMoney';
+import { exibirToastErrorCatch, exibirToastSuccess, maskMoney } from '../../../utils';
+import correctValueVanilla from '../../../utils/correct-value-vanilla';
 
 interface IParams {
   produto: IProduto | undefined;
@@ -162,11 +165,15 @@ const ModalFormularioProduto = ({
             </div>
             <div className="d-flex flex-column">
               <span className="fs-14px">Preço</span>
-              <input
+              <InputMaskMoney
+                id="input-preco-produto"
                 className="form-control form-control-lg"
                 placeholder="Informe o preço do produto"
-                value={preco || ''}
-                onChange={(e) => onChangePreco(Number(e.target.value))}
+                value={maskMoney(preco || '')}
+                onInput={(e: ChangeEvent<HTMLInputElement>) => {
+                  const value = correctValueVanilla(e.target.value);
+                  setPreco(Number(value));
+                }}
                 required
               />
             </div>

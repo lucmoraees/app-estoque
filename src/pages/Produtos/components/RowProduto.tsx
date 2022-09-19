@@ -28,7 +28,7 @@ const RowProduto = ({
       <td>{produto.codigo}</td>
       <td>{produto.descricao}</td>
       <td>{maskMoney(produto.preco)}</td>
-      <td>{produto.peso}</td>
+      <td>{`${produto.peso}g`}</td>
       <td>{traducaoTipoEmbalagem(produto.tipoEmbalagem)}</td>
       <td>{produto.quantidadeEmbalagem}</td>
       <td>{moment(produto.createdAt).format('DD/MM/YYYY H:mm:ss')}</td>

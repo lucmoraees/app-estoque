@@ -7,3 +7,5 @@ export {
   exibirToastSuccess,
 } from './toasts';
 export { default as traducaoTipoEmbalagem } from './traducao-tipo-embalagem';
+export { default as getInputById } from './get-input-by-id';
+export { default as correctVaalueVanilla } from './correct-value-vanilla';
