@@ -22,3 +22,11 @@ export interface IParamsCreateProduto {
   quantidadeEmbalagem: number;
   peso: number;
 }
+
+export interface IParamsUpdateProduto {
+  descricao?: string;
+  preco?: number;
+  tipoEmbalagem?: number;
+  quantidadeEmbalagem?: number;
+  peso?: number;
+}

@@ -6,3 +6,4 @@ export {
   exibirToastWarning,
   exibirToastSuccess,
 } from './toasts';
+export { default as traducaoTipoEmbalagem } from './traducao-tipo-embalagem';

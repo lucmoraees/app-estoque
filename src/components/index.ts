@@ -16,3 +16,4 @@ export { default as Pagination } from './Pagination';
 export { default as Filters } from './Filters';
 export { default as SelectTipoEmbalagem } from './SelectTipoEmbalagem';
 export { default as Modal } from './Modal';
+export { default as ModalConfirmacao } from './ModalConfirmacao';

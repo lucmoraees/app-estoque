@@ -11,4 +11,5 @@ export type {
   IProduto,
   IResponseProdutos,
   IParamsCreateProduto,
+  IParamsUpdateProduto,
 } from './produtos';

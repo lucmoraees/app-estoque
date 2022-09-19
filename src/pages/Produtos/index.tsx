@@ -12,6 +12,7 @@ import {
   CardTitle,
   Container,
   Filters,
+  ModalConfirmacao,
   Pagination,
   Table,
   TableEmpty,
@@ -19,18 +20,20 @@ import {
   TableLoading,
   Th,
 } from '../../components';
-import { exibirToastErrorCatch } from '../../utils';
+import { exibirToastErrorCatch, exibirToastSuccess } from '../../utils';
 import ButtonAdicionarProduto from './components/ButtonAdicionarProduto';
 import ModalFormularioProduto from './components/ModalFormularioProduto';
 import RowProduto from './components/RowProduto';
 
 const Produtos = (): ReactElement => {
-  const [showModalFormulario, setShowModalFormulario] = useState<boolean>(true);
+  const [showModalDeletarProduto, setShowModalDeletarProduto] = useState<boolean>(false);
+  const [showModalFormulario, setShowModalFormulario] = useState<boolean>(false);
+  const [produtoSelecionado, setProdutoSelecionado] = useState<IProduto | undefined>(undefined);
   const [produtos, setProdutos] = useState<IProduto[]>([]);
   const [totalPaginas, setTotalPaginas] = useState<number>(1);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [filters, setFilters] = useState<IFilters>({
-    column: undefined,
+    column: 'descricao',
     value: undefined,
     columnToOrder: 'codigo',
     operacao: 'contendo',
@@ -72,8 +75,33 @@ const Produtos = (): ReactElement => {
     setFilters({ ...filters, pagina });
   };
 
-  const handleShowModalFormulario = (value: boolean) => {
-    setShowModalFormulario(value);
+  const closeModalModalFormulario = () => {
+    setProdutoSelecionado(undefined);
+    setShowModalFormulario(false);
+  };
+
+  const handleEditarProduto = (p: IProduto) => {
+    setProdutoSelecionado(p);
+    setShowModalFormulario(true);
+  };
+
+  const deletarProduto = async () => {
+    try {
+      if (!produtoSelecionado) return;
+
+      await api.deletarProduto(produtoSelecionado.codigo);
+
+      await buscarProdutos();
+
+      exibirToastSuccess('Produto deletado!');
+    } catch (error) {
+      exibirToastErrorCatch(error, 'Algo deu errado ao tentar deletar o produto!');
+    }
+  };
+
+  const handleExcluirProduto = (p: IProduto) => {
+    setProdutoSelecionado(p);
+    setShowModalDeletarProduto(true);
   };
 
   useEffect(() => {
@@ -82,21 +110,58 @@ const Produtos = (): ReactElement => {
 
   return (
     <>
+      <ModalConfirmacao
+        closeModal={() => setShowModalDeletarProduto(false)}
+        onSubmit={deletarProduto}
+        text={`Ao confirmar você excluirá o produto ${produtoSelecionado?.descricao} de forma permanente`}
+        title={`Deseja excluir o produto #${produtoSelecionado?.codigo}?`}
+        visible={showModalDeletarProduto}
+      />
       <ModalFormularioProduto
+        produto={produtoSelecionado}
+        buscarProdutos={buscarProdutos}
         visible={showModalFormulario}
-        handleVisible={handleShowModalFormulario}
+        closeModal={closeModalModalFormulario}
       />
       <Container>
         <Card>
           <CardTitle
             title="Produtos"
-            button={<ButtonAdicionarProduto showModalFormulario={() => handleShowModalFormulario(true)} />}
+            button={<ButtonAdicionarProduto showModalFormulario={() => setShowModalFormulario(true)} />}
           />
           <div className="card-inner-group d-flex flex-column flex-1">
             <div className="d-flex flex-row gap-10 justify-content-center">
               <Filters
+                columnFilter={filters.column}
+                valueFilter={filters.value}
                 onChangeFilters={onChangeFilters}
                 onChangeQuantidade={onChangeFilterQuantidade}
+                columns={[
+                  {
+                    name: 'Código',
+                    value: 'id',
+                  },
+                  {
+                    name: 'Descrição',
+                    value: 'descricao',
+                  },
+                  {
+                    name: 'Preço',
+                    value: 'preco',
+                  },
+                  {
+                    name: 'Peso (gramas)',
+                    value: 'peso',
+                  },
+                  {
+                    name: 'Embalagem',
+                    value: 'tipo_embalagem',
+                  },
+                  {
+                    name: 'Quantidade',
+                    value: 'quantidade_embalagem',
+                  },
+                ]}
               />
             </div>
             <Table>
@@ -146,10 +211,19 @@ const Produtos = (): ReactElement => {
                   />
                   <Th
                     column="Cadastro"
+                    columnValue="created_at"
+                    changeOrder={onChangeOrder}
+                    columnToOrder={filters.columnToOrder}
+                    order={filters.order}
                   />
                   <Th
                     column="Ùltima alteração"
+                    columnValue="updated_at"
+                    changeOrder={onChangeOrder}
+                    columnToOrder={filters.columnToOrder}
+                    order={filters.order}
                   />
+                  <Th column="" />
                 </tr>
               </thead>
               <tbody>
@@ -165,6 +239,8 @@ const Produtos = (): ReactElement => {
                       <RowProduto
                         index={index}
                         produto={produto}
+                        handleEditarProduto={handleEditarProduto}
+                        handleExcluirProduto={handleExcluirProduto}
                       />
                     ))}
                   </>

@@ -3,6 +3,7 @@ import {
   IResponseProdutos,
   IFilters,
   IParamsCreateProduto,
+  IParamsUpdateProduto,
 } from '../@types';
 import xhr from './xhr';
 
@@ -14,7 +15,20 @@ const cadastrarProduto = (params: IParamsCreateProduto): AxiosPromise<IResponseP
   xhr.post('/produtos', params)
 );
 
+const editarProduto = (
+  codigoProduto: number,
+  params: IParamsUpdateProduto,
+): AxiosPromise<IResponseProdutos> => (
+  xhr.put(`/produtos/${codigoProduto}`, params)
+);
+
+const deletarProduto = (codigoProduto: number): AxiosPromise<IResponseProdutos> => (
+  xhr.delete(`/produtos/${codigoProduto}`)
+);
+
 export default {
   getProdutos,
   cadastrarProduto,
+  editarProduto,
+  deletarProduto,
 };

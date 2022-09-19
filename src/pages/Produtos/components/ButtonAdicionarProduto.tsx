@@ -8,7 +8,7 @@ interface IParams {
 const ButtonAdicionarProduto = ({ showModalFormulario }: IParams): ReactElement => (
   <Button
     onClick={showModalFormulario}
-    className="btn btn-blue"
+    className="btn btn-dark"
   >
     Adicionar produto
   </Button>

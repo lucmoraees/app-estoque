@@ -8,21 +8,29 @@ interface Column {
 }
 
 interface Props {
+  columnFilter?: string;
+  valueFilter?: string;
   columns?: Column[];
   hasQuantidade?: boolean;
   onChangeFilters: (c: string | undefined, v: string | undefined) => void;
   onChangeQuantidade: (q: number) => void;
 }
 
+const columnsPersonalizadas = ['tipo_embalagem'];
+
 const Filters = ({
+  columnFilter,
+  valueFilter,
   columns,
   hasQuantidade,
   onChangeFilters,
   onChangeQuantidade,
 }: Props): ReactElement => {
-  const [column, setColumn] = useState<string | undefined>(undefined);
-  const [value, setValue] = useState<string | undefined>(undefined);
+  const [column, setColumn] = useState<string | undefined>(columnFilter);
+  const [value, setValue] = useState<string | undefined>(valueFilter);
   const [quantidade, setQuantidade] = useState<number>(10);
+
+  const isColumnPersonalizada = column && columnsPersonalizadas.includes(column);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,15 +87,30 @@ const Filters = ({
           </div>
         ) : null}
         <div className="dataTables_filter w-min-200px w-mobile-100 flex-1 flex-row d-flex gap-10">
-          <input
-            id="filter-input"
-            type="search"
-            name="value"
-            className="form-control"
-            placeholder="Digite aqui..."
-            value={value || ''}
-            onChange={(e) => setValue(e.target.value)}
-          />
+          {!isColumnPersonalizada ? (
+            <input
+              id="filter-input"
+              type="search"
+              name="value"
+              className="form-control"
+              placeholder="Digite aqui..."
+              value={value || ''}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          ) : null}
+          {column === 'tipo_embalagem' && (
+            <select
+              name="value"
+              className="form-control"
+              value={value}
+              onChange={(c) => setValue(c.target.value)}
+            >
+              <option value="" disabled>Selecione um tipo de embalagem</option>
+              <option value="1">Unidade</option>
+              <option value="2">Pack</option>
+              <option value="3">Caixa</option>
+            </select>
+          )}
           {hasQuantidade ? (
             <div className="text-right p-0 w-mobile-100">
               <div className="datatable-filter">
@@ -134,6 +157,8 @@ const Filters = ({
 export default Filters;
 
 Filters.defaultProps = {
+  columnFilter: undefined,
+  valueFilter: undefined,
   hasQuantidade: true,
   columns: undefined,
 };

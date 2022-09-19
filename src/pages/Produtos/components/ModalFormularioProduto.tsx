@@ -1,15 +1,25 @@
 /* eslint-disable no-unused-vars */
-import { FormEvent, useState } from 'react';
+import {
+  FormEvent, useCallback, useEffect, useState,
+} from 'react';
+import { IProduto } from '../../../@types';
 import api from '../../../api';
 import { Button, Modal, SelectTipoEmbalagem } from '../../../components';
 import { exibirToastErrorCatch, exibirToastSuccess } from '../../../utils';
 
 interface IParams {
+  produto: IProduto | undefined;
   visible: boolean;
-  handleVisible: (x: boolean) => void;
+  closeModal: () => void;
+  buscarProdutos: () => Promise<void>;
 }
 
-const ModalFormularioProduto = ({ visible, handleVisible }: IParams) => {
+const ModalFormularioProduto = ({
+  produto,
+  visible,
+  closeModal,
+  buscarProdutos,
+}: IParams) => {
   const [descricao, setDescricao] = useState<string>('');
   const [preco, setPreco] = useState<number>(0);
   const [tipoEmbalagem, setTipoEmbalagem] = useState<number>(1);
@@ -24,10 +34,8 @@ const ModalFormularioProduto = ({ visible, handleVisible }: IParams) => {
     setQuantidadeEmbalagem(1);
   };
 
-  const handleCriarProduto = async (e: FormEvent<HTMLFormElement>) => {
+  const cadastrarProduto = async () => {
     try {
-      e.preventDefault();
-
       const params = {
         descricao, preco, tipoEmbalagem, quantidadeEmbalagem, peso,
       };
@@ -37,9 +45,44 @@ const ModalFormularioProduto = ({ visible, handleVisible }: IParams) => {
       exibirToastSuccess('Produto cadastrado com sucesso!');
 
       limparInputs();
+
+      await buscarProdutos();
     } catch (error) {
       exibirToastErrorCatch(error);
     }
+  };
+
+  const editarProduto = async () => {
+    try {
+      if (!produto) return;
+
+      const params = {
+        descricao, preco, tipoEmbalagem, quantidadeEmbalagem, peso,
+      };
+
+      await api.editarProduto(produto.codigo, params);
+
+      exibirToastSuccess('Produto editado com sucesso!');
+
+      limparInputs();
+
+      await buscarProdutos();
+
+      closeModal();
+    } catch (error) {
+      exibirToastErrorCatch(error);
+    }
+  };
+
+  const handleOperacaoProduto = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!produto) {
+      cadastrarProduto();
+      return;
+    }
+
+    editarProduto();
   };
 
   const onChangeDescricao = (value: string) => {
@@ -72,16 +115,41 @@ const ModalFormularioProduto = ({ visible, handleVisible }: IParams) => {
     setPeso(value);
   };
 
+  const handleInitialValues = useCallback(() => {
+    if (!produto) {
+      limparInputs();
+      return;
+    }
+
+    setDescricao(produto.descricao);
+    setPreco(produto.preco);
+    setPeso(produto.peso);
+    setTipoEmbalagem(produto.tipoEmbalagem);
+    setQuantidadeEmbalagem(produto.quantidadeEmbalagem);
+  }, [produto]);
+
+  useEffect(() => {
+    handleInitialValues();
+  }, [handleInitialValues]);
+
   return (
     <Modal
       modalMd
       visible={visible}
-      handleVisible={handleVisible}
-      title="Cadastrar produto"
+      closeModal={closeModal}
+      title={produto ? 'Editar produto' : 'Cadastrar produto'}
     >
       <div className="card-inner-group d-flex flex-column flex-1 h-100 justify-content-between">
-        <form onSubmit={handleCriarProduto} className=" flex-column flex-1 gap-20 h-100 d-flex">
+        <form onSubmit={handleOperacaoProduto} className=" flex-column flex-1 gap-20 h-100 d-flex">
           <div className=" flex-column flex-1 gap-30 h-100 d-flex">
+            {produto ? (
+              <div className="d-flex flex-column">
+                <span className="fs-14px">Código</span>
+                <span style={{ backgroundColor: '#f5f6fa' }} className="form-control form-control-lg">
+                  {produto?.codigo}
+                </span>
+              </div>
+            ) : null}
             <div className="d-flex flex-column">
               <span className="fs-14px">Descrição</span>
               <input
@@ -139,17 +207,26 @@ const ModalFormularioProduto = ({ visible, handleVisible }: IParams) => {
             </div>
           </div>
           <div className="d-flex flex-row gap-10">
-            <Button
-              onClick={limparInputs}
-              className="btn btn-light flex-1 justify-content-center"
-            >
-              Limpar
-            </Button>
+            {produto ? (
+              <Button
+                onClick={closeModal}
+                className="btn btn-light flex-1 justify-content-center"
+              >
+                Cancelar
+              </Button>
+            ) : (
+              <Button
+                onClick={limparInputs}
+                className="btn btn-light flex-1 justify-content-center"
+              >
+                Limpar
+              </Button>
+            )}
             <Button
               type="submit"
               className="btn btn-blue flex-1 justify-content-center"
             >
-              Cadastrar
+              {produto ? 'Salvar alterações' : 'Cadastrar'}
             </Button>
           </div>
         </form>

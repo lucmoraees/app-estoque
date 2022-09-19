@@ -6,7 +6,7 @@ import { Anchor } from '.';
 interface IProps {
   children: ReactNode;
   visible: boolean,
-  handleVisible: (x: boolean) => void;
+  closeModal: () => void;
   title?: string;
   footer?: ReactNode;
   modalSm?: boolean;
@@ -20,7 +20,7 @@ const Modal = ({
   footer,
   title,
   visible,
-  handleVisible,
+  closeModal,
   modalSm,
   modalMd,
   modalLg,
@@ -48,7 +48,7 @@ const Modal = ({
         {title ? (
           <div id="modal-header" className="modal-header">
             <h5 className="modal-title">{title}</h5>
-            <Anchor onClick={() => handleVisible(false)} className="close" data-dismiss="modal" aria-label="Close">
+            <Anchor onClick={closeModal} className="close" data-dismiss="modal" aria-label="Close">
               <em className="icon ni ni-cross" />
             </Anchor>
           </div>
@@ -62,7 +62,7 @@ const Modal = ({
               zIndex: 9999,
             }}
           >
-            <Anchor onClick={() => handleVisible(false)} className="close" data-dismiss="modal" aria-label="Close">
+            <Anchor onClick={closeModal} className="close" data-dismiss="modal" aria-label="Close">
               <em className="icon ni ni-cross" />
             </Anchor>
           </div>
