@@ -23,7 +23,7 @@ const RowProduto = ({
   return (
     <tr
       id={`row-${index}`}
-      className={`row-focus align-items-center pointer custom-tr custom-tr-${isRowPar ? 'par' : 'impar'}`}
+      className={`row-focus align-items-center custom-tr custom-tr-${isRowPar ? 'par' : 'impar'}`}
     >
       <td>{produto.codigo}</td>
       <td>{produto.descricao}</td>

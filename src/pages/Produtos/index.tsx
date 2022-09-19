@@ -96,6 +96,8 @@ const Produtos = (): ReactElement => {
       exibirToastSuccess('Produto deletado!');
 
       setShowModalDeletarProduto(false);
+
+      setProdutoSelecionado(undefined);
     } catch (error) {
       exibirToastErrorCatch(error, 'Algo deu errado ao tentar deletar o produto!');
     }
