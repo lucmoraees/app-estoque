@@ -232,10 +232,10 @@ const Produtos = (): ReactElement => {
               </thead>
               <tbody>
                 {isLoading ? (
-                  <TableLoading colSpan={8} />
+                  <TableLoading colSpan={10} />
                 ) : null}
                 {!isLoading && !produtos.length ? (
-                  <TableEmpty colSpan={8} text="Não há produtos a serem exibidas!" />
+                  <TableEmpty colSpan={10} text="Não há produtos a serem exibidas!" />
                 ) : null}
                 {!isLoading && produtos.length ? (
                   <>

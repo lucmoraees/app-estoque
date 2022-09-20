@@ -18,7 +18,7 @@ const Header = (): ReactElement => (
     <div className="container-fluid" style={{ paddingInline: 0 }}>
       <div className="nk-header-wrap">
         <div className="nk-menu-trigger">
-          <span className="fs-25px text-white text-bold">MTRIX</span>
+          <span className="fs-25px text-white text-bold">ESTOQUE</span>
         </div>
       </div>
     </div>
