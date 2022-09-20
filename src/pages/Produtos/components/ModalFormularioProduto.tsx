@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import {
   ChangeEvent,
   FormEvent, useCallback, useEffect, useState,
@@ -172,7 +171,7 @@ const ModalFormularioProduto = ({
                 value={maskMoney(preco || '')}
                 onInput={(e: ChangeEvent<HTMLInputElement>) => {
                   const value = correctValueVanilla(e.target.value);
-                  setPreco(Number(value));
+                  onChangePreco(Number(value));
                 }}
                 required
               />
