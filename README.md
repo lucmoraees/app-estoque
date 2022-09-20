@@ -22,9 +22,9 @@ $ cd app-estoque
 Follow the steps below:
 ```bash
 # Install the dependencies
-$ npm install
+$ yarn
 # Start the project
-$ npm start
+$ yarn start
 ```
 The app will be available for access on your browser at http://localhost:3000
 
