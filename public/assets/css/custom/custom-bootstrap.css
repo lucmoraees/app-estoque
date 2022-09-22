@@ -102,20 +102,3 @@
 .text-yellow {
   color: #cd9f0c;
 }
-
-.nav-tabs .nav-link.active {
-  color: #3889fa !important;
-}
-
-.nav-tabs .nav-link:after {
-  background-color: #3889fa !important;
-}
-
-/* Background */
-.background-light {
-  background-color: #e5e9f2;
-}
-
-.background-yellow-light {
-  background-color: #fef7e2;
-}
