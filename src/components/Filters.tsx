@@ -49,9 +49,8 @@ const Filters = ({
   };
 
   const cleanFiltros = () => {
-    setColumn(undefined);
     setValue(undefined);
-    onChangeFilters(undefined, undefined);
+    onChangeFilters(column, undefined);
   };
 
   const handleChangeQuantidade = (q: number) => {
